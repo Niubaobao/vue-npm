@@ -1,7 +1,14 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <vpay
+      ref="pays"
+      v-model="show"
+      @close="close"
+      @forget="forget"
+      @input-end="inputEnd"
+    ></vpay>
+    <img alt="Vue logo" src="./assets/logo.png" />
+    <HelloWorld msg="Welcome to Your Vue.js App" />
   </div>
 </template>
 
@@ -10,6 +17,20 @@ import HelloWorld from './components/HelloWorld.vue'
 
 export default {
   name: 'app',
+  data: () => ({
+    show: true
+  }),
+  methods: {
+    close() {
+      console.log('close')
+    },
+    forget() {
+      console.log('forget')
+    },
+    inputEnd() {
+      console.log('inputEnd')
+    }
+  },
   components: {
     HelloWorld
   }

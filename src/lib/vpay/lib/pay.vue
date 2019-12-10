@@ -25,43 +25,63 @@
       <!--键盘区-->
       <ul class="keyboard">
         <li @click="onKeyboard(1)">
-          <p class="num"><strong>1</strong></p>
+          <p class="num">
+            <strong>1</strong>
+          </p>
           <p class="character"></p>
         </li>
         <li @click="onKeyboard(2)">
-          <p class="num"><strong>2</strong></p>
+          <p class="num">
+            <strong>2</strong>
+          </p>
           <p class="character">ABC</p>
         </li>
         <li @click="onKeyboard(3)">
-          <p class="num"><strong>3</strong></p>
+          <p class="num">
+            <strong>3</strong>
+          </p>
           <p class="character">DEF</p>
         </li>
         <li @click="onKeyboard(4)">
-          <p class="num"><strong>4</strong></p>
+          <p class="num">
+            <strong>4</strong>
+          </p>
           <p class="character">GHI</p>
         </li>
         <li @click="onKeyboard(5)">
-          <p class="num"><strong>5</strong></p>
+          <p class="num">
+            <strong>5</strong>
+          </p>
           <p class="character">JKL</p>
         </li>
         <li @click="onKeyboard(6)">
-          <p class="num"><strong>1</strong></p>
+          <p class="num">
+            <strong>1</strong>
+          </p>
           <p class="character">MNO</p>
         </li>
         <li @click="onKeyboard(7)">
-          <p class="num"><strong>7</strong></p>
+          <p class="num">
+            <strong>7</strong>
+          </p>
           <p class="character">PQRS</p>
         </li>
         <li @click="onKeyboard(8)">
-          <p class="num"><strong>8</strong></p>
+          <p class="num">
+            <strong>8</strong>
+          </p>
           <p class="character">TUV</p>
         </li>
         <li @click="onKeyboard(9)">
-          <p class="num"><strong>9</strong></p>
+          <p class="num">
+            <strong>9</strong>
+          </p>
           <p class="character">WXYZ</p>
         </li>
         <li class="none"></li>
-        <li class="zero" @click="onKeyboard(0)"><strong>0</strong></li>
+        <li class="zero" @click="onKeyboard(0)">
+          <strong>0</strong>
+        </li>
         <li class="delete" @click="deleteKey"></li>
       </ul>
 
@@ -69,18 +89,18 @@
       <div class="loading-wrap" v-if="payStatus !== 0">
         <div class="loading">
           <!--加载图标-->
-          <img
+          <!-- <img
             src="./images/loading.png"
             class="loading-ico"
             alt=""
             v-if="payStatus === 1"
-          />
-          <img
+          />-->
+          <!-- <img
             src="./images/success.png"
             class="success-ico"
             alt=""
             v-if="payStatus === 2"
-          />
+          />-->
           <!--加载文字-->
           <p v-if="payStatus === 1">{{ loadingText }}</p>
           <p v-if="payStatus === 2">{{ finishedText }}</p>
@@ -109,6 +129,11 @@ export default {
     failTip: '支付密码错误', //
     isShowFail: false
   }),
+
+  model: {
+    prop: 'show',
+    event: 'change'
+  },
 
   watch: {
     // 监听支付密码，支付密码输入完成后触发input-end回调
@@ -154,13 +179,12 @@ export default {
     }
   },
 
-  // 点击密码操作
-  onKeyboard(key) {
-    // 截图前六位密码
-    this.password = (this.password + key).slice(0, this.digit)
-  },
-
   methods: {
+    // 点击密码操作
+    onKeyboard(key) {
+      // 截图前六位密码
+      this.password = (this.password + key).slice(0, this.digit)
+    },
     // 取消支付
     cancel() {
       // 支付过程中，不允许取消支付
@@ -259,7 +283,7 @@ li {
   top: 0;
   width: 40px;
   height: 40px;
-  background: url(./images/back.png) no-repeat center;
+  /* background: url(./images/back.png) no-repeat center; */
 }
 /* 密码框 */
 .pass-box {
@@ -343,7 +367,7 @@ li {
 }
 .keyboard .delete {
   border-bottom: 0;
-  background: url(./images/delete.png) no-repeat center #d1d5db;
+  /* background: url(./images/delete.png) no-repeat center #d1d5db; */
 }
 .keyboard .delete:active {
   border-bottom: 0;

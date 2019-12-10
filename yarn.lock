@@ -8273,3 +8273,15 @@ yorkie@^2.0.0:
     is-ci "^1.0.10"
     normalize-path "^1.0.0"
     strip-indent "^2.0.0"
+
+zycpay@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npm.taobao.org/zycpay/download/zycpay-1.0.0.tgz#654fe02c160f3e5e018ee9c9511ce1705e56b180"
+  integrity sha1-ZU/gLBYPPl4BjunJURzhcF5WsYA=
+
+zycpay@^1.0.3:
+  version "1.0.3"
+  resolved "https://registry.npm.taobao.org/zycpay/download/zycpay-1.0.3.tgz?cache=0&sync_timestamp=1575969600450&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fzycpay%2Fdownload%2Fzycpay-1.0.3.tgz#4735e44ff9f43b40db05697c11376316fc15798f"
+  integrity sha1-RzXkT/n0O0DbBWl8ETdjFvwVeY8=
+  dependencies:
+    zycpay "^1.0.0"
